@@ -2,24 +2,6 @@ const launchesDatabase = require('./launches.mongo');
 const planets = require('./planets.mongo');
 const axios = require('axios');
 
-
-// const DEFAULT_FLIGHT_NUMBER = 100;
-
-// const Launch = {
-//     flightNumber: 100, // flight_number
-//     mission: "Kepler Exploration X", // name
-//     rocket: "Explorer IS1", // rocket.name
-//     launchDate: new Date("December 27, 2026"), // date_local
-//     target: "Kepler-442 b", //  not_applicable
-//     customers: ["ZTM", "NASA"], // payloads.customers for each payload
-//     upcoming: true, // upcoming
-//     success: true, // success
-// }
-
-async function seedDefaultLaunch() {
-    await saveLaunch(Launch);
-}
-
 const SPACEX_API_URL = 'https://api.spacexdata.com/v4/launches/query';
 
 async function populateLaunches() {
@@ -161,5 +143,4 @@ module.exports = {
     getAllLaunches,
     scheduleNewLaunch,
     abortLaunchById,
-    seedDefaultLaunch,
 }
