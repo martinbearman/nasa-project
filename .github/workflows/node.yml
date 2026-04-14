@@ -18,6 +18,6 @@ jobs:
       - name: Install dependencies
         run: pnpm run install
       - name: Build client
-        run: pnpm run build --prefix client
+        run: pnpm --prefix client run build
         env:
           CI: false
