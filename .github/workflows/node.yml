@@ -15,7 +15,8 @@ jobs:
           node-version: '20'
       - name: Enable Corepack (pnpm)
         run: corepack enable
-      - run: pnpm install
+      - name: Install dependencies
+        run: pnpm run install
       - name: Build client
         run: pnpm run build --prefix client
         env:
